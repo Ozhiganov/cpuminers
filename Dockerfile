@@ -6,4 +6,5 @@ RUN apt-get autoclean && apt-get autoremove && apt-get update && \
 RUN git clone https://github.com/Ozhiganov/cpuminers.git
 
 WORKDIR /cpuminers
+
 ENTRYPOINT ["/cpuminers"]
