@@ -1,4 +1,3 @@
-#
 # Dockerfile for cpuminer
 
 FROM		ubuntu:16.04
