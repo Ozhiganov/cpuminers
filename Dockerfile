@@ -1,7 +1,8 @@
-FROM ubuntu:16.04
-MAINTAINER Evgeniy N. Ozhiganov <eozhiganov@ya.ru>
+# Dockerfile for cpuminer
 
-WORKDIR /opt
-RUN git clone https://github.com/Ozhiganov/cpuminers/cpuminer-multi
-WORKDIR /opt/cpuminers
-ENTRYPOINT ["/opt/cpuminers"]
+FROM		ubuntu:16.04
+MAINTAINER	Evgeniy N. Ozhiganov <eozhiganov@ya.ru>
+
+RUN		git clone https://github.com/Ozhiganov/cpuminers.git
+
+WORKDIR		/cpuminers
