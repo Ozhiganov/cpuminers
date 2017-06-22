@@ -1,10 +1,12 @@
-FROM		ubuntu:16.04
-MAINTAINER	Evgeniy N. Ozhiganov <eozhiganov@ya.ru>
+FROM ubuntu:16.04
+MAINTAINER Evgeniy N. Ozhiganov <eozhiganov@ya.ru>
 
-RUN apt-get autoclean && apt-get autoremove && apt-get update && \
-    apt-get -qqy install git
-RUN git clone https://github.com/Ozhiganov/cpuminers.git
-
+RUN adduser -S -D -H -h /cpuminers miner
+RUN apk --no-cache upgrade && \
+    apk --no-cache add \
+    git \
+    git clone https://github.com/Ozhiganov/cpuminers && \
+    cd cpuminers && \
+    git
+USER miner
 WORKDIR /cpuminers
-
-ENTRYPOINT ["/cpuminers"]
